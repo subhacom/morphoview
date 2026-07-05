@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Rendered output
+*.png
+*.avi
+*.mp4
+!examples/*.png
+
+# Editors / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
