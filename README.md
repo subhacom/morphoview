@@ -139,6 +139,32 @@ pip install -e ".[dev]"
 pytest
 ```
 
+## Releasing to PyPI
+
+Publishing is automated by
+[`.github/workflows/publish.yml`](.github/workflows/publish.yml). It builds
+the sdist and wheel on every push/PR as a smoke test, and uploads them to
+PyPI when a GitHub Release is published, using
+[Trusted Publishing](https://docs.pypi.org/trusted-publishers/) (OIDC) — so
+there are no API tokens to store as secrets.
+
+One-time setup on PyPI: at
+<https://pypi.org/manage/account/publishing/> add a *pending publisher* for
+this project with
+
+- Owner: `subhacom`
+- Repository: `neuronview`
+- Workflow: `publish.yml`
+- Environment: `pypi`
+
+To cut a release:
+
+1. Bump `version` in `pyproject.toml` (and commit).
+2. Create a GitHub Release with a tag matching that version, e.g. `v0.1.0`
+   (the leading `v` is optional). The workflow verifies the tag matches
+   `pyproject.toml` and fails fast on a mismatch.
+3. Publishing runs automatically once the release is published.
+
 ## History
 It was refactored and updated by Claude Opus 4.8 from the morphology utilities developed for the GGN model published in Ray S, Aldworth ZN, Stopfer MA. Feedback inhibition and its control in an insect olfactory circuit. Scott K, editor. eLife. 2020 Mar 12;9:e53281. doi:10.7554/eLife.53281.
 
