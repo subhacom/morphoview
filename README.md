@@ -154,8 +154,7 @@ this project with
 
 - PyPI project name: `morphoview`
 - Owner: `subhacom`
-- Repository: `neuronview` (the GitHub repo name, which differs from the
-  PyPI/package name `morphoview`)
+- Repository: `morphoview`
 - Workflow: `publish.yml`
 - Environment: `pypi`
 

@@ -36,7 +36,7 @@ dev = ["pytest>=7.0", "matplotlib>=3.4", "vtk>=9.0"]
 morphoview = "morphoview.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/subhacom/neuronview"
+Homepage = "https://github.com/subhacom/morphoview"
 
 [tool.setuptools.packages.find]
 where = ["src"]
