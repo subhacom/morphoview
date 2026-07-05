@@ -2,7 +2,7 @@ import pathlib
 
 import pytest
 
-import neuronview as nv
+import morphoview as nv
 
 SAMPLE = pathlib.Path(__file__).resolve().parents[1] / "examples" / "sample.swc"
 

@@ -1,10 +1,10 @@
-"""Command-line interface for neuronview.
+"""Command-line interface for morphoview.
 
 Subcommands:
 
-    neuronview info   FILE...            print morphology statistics
-    neuronview display FILE... [opts]    interactive 3-D / 2-D display
-    neuronview movie  -i FILE -o OUT ...  render a rotating movie (VTK)
+    morphoview info   FILE...            print morphology statistics
+    morphoview display FILE... [opts]    interactive 3-D / 2-D display
+    morphoview movie  -i FILE -o OUT ...  render a rotating movie (VTK)
 """
 
 from __future__ import annotations
@@ -175,7 +175,7 @@ def _cmd_movie(args) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="neuronview",
+        prog="morphoview",
         description="Read, analyze and visualize neuronal morphologies (SWC).",
     )
     sub = parser.add_subparsers(dest="command", required=True)

@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "neuronview"
+name = "morphoview"
 version = "0.1.0"
 description = "Read, analyze and visualize neuronal morphologies in SWC format."
 readme = "README.md"
@@ -33,7 +33,7 @@ all = ["matplotlib>=3.4", "vtk>=9.0", "vispy>=0.11"]
 dev = ["pytest>=7.0", "matplotlib>=3.4", "vtk>=9.0"]
 
 [project.scripts]
-neuronview = "neuronview.cli:main"
+morphoview = "morphoview.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/subhacom/neuronview"
@@ -42,7 +42,7 @@ Homepage = "https://github.com/subhacom/neuronview"
 where = ["src"]
 
 [tool.setuptools.package-data]
-neuronview = ["py.typed"]
+morphoview = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,7 +1,7 @@
 import networkx as nx
 import numpy as np
 
-import neuronview as nv
+import morphoview as nv
 
 
 def test_graph_structure(sample_graph):

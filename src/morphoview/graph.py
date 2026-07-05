@@ -39,7 +39,7 @@ def swc_to_graph(source) -> nx.DiGraph:
     """Build a :class:`networkx.DiGraph` from a morphology.
 
     ``source`` may be a path to an SWC file or a structured array with
-    :data:`neuronview.swc.SWC_DTYPE` layout.  Each node gets the point's
+    :data:`morphoview.swc.SWC_DTYPE` layout.  Each node gets the point's
     ``x, y, z, r, s, p`` attributes; each edge gets a ``length``.
     """
     if isinstance(source, (str, bytes)) or hasattr(source, "__fspath__"):

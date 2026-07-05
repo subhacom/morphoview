@@ -4,7 +4,7 @@ Renders a morphology as tapered tubes (using per-point radii) or as
 fixed-width lines, coloured by structure type.  Supports labelling nodes,
 an optional scale-bar axis, fullscreen display and saving a PNG snapshot.
 
-Requires the ``vtk`` package (``pip install neuronview[vtk]``).
+Requires the ``vtk`` package (``pip install morphoview[vtk]``).
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ try:
 except ImportError as exc:  # pragma: no cover - exercised only without vtk
     raise ImportError(
         "The VTK backend requires the 'vtk' package. "
-        "Install it with: pip install neuronview[vtk]"
+        "Install it with: pip install morphoview[vtk]"
     ) from exc
 
 

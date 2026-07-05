@@ -1,6 +1,6 @@
 import numpy as np
 
-import neuronview as nv
+import morphoview as nv
 
 
 def test_load_swc_fields(sample_path):

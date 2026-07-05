@@ -1,7 +1,7 @@
 import pytest
 
-import neuronview as nv
-from neuronview import colors
+import morphoview as nv
+from morphoview import colors
 
 
 def test_structure_names():

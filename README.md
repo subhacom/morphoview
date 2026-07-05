@@ -1,10 +1,10 @@
-# neuronview
+# morphoview
 
 Read, analyze and visualize neuronal morphologies stored in
 [SWC](http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html)
 format.
 
-`neuronview` loads an SWC trace into a `networkx` graph, computes
+`morphoview` loads an SWC trace into a `networkx` graph, computes
 morphology statistics (branch points, leaves, path lengths, total
 neurite length), and renders the cell in 2-D or 3-D using any of three
 pluggable backends:
@@ -34,22 +34,22 @@ pip install -e ".[all]"     # everything
 
 ```bash
 # Print morphology statistics
-neuronview info examples/sample.swc
+morphoview info examples/sample.swc
 
 # Interactive 3-D display (VTK, tapered tubes, coloured by structure)
-neuronview display examples/sample.swc
+morphoview display examples/sample.swc
 
 # Matplotlib 2-D projection onto the XY plane
-neuronview display examples/sample.swc -b mpl --proj xy -c 4cp
+morphoview display examples/sample.swc -b mpl --proj xy -c 4cp
 
 # Several cells at once, positioned independently
-neuronview display cellA.swc cellB.swc -t "0 0 0" -t "200 0 0" -r "z 90"
+morphoview display cellA.swc cellB.swc -t "0 0 0" -t "200 0 0" -r "z 90"
 
 # Save a snapshot without opening a window (headless)
-neuronview display examples/sample.swc --save cell.png --offscreen
+morphoview display examples/sample.swc --save cell.png --offscreen
 
 # Render a rotating movie sweeping 360 degrees about Y
-neuronview movie -i examples/sample.swc -o cell.avi -y 360
+morphoview movie -i examples/sample.swc -o cell.avi -y 360
 ```
 
 Useful `display` options:
@@ -65,7 +65,7 @@ Useful `display` options:
 ## Python API
 
 ```python
-import neuronview as nv
+import morphoview as nv
 
 graph = nv.swc_to_graph("examples/sample.swc")
 print(nv.summary(graph))
@@ -79,19 +79,19 @@ by_type = nv.structure_node_map(graph)
 distances = nv.soma_distance(graph)
 
 # Render with matplotlib
-from neuronview.backends import mpl
+from morphoview.backends import mpl
 ax = mpl.plot_3d(graph, color=nv.get_colormap("3cd2"))
 mpl.show()
 
 # Render with VTK (tapered tubes)
-from neuronview.backends import vtk
+from morphoview.backends import vtk
 vtk.show(graph, colormap=nv.get_colormap("3cd2"), axes=True)
 ```
 
 ### Transformations
 
 ```python
-from neuronview import transform as tf
+from morphoview import transform as tf
 
 tf.rotate(graph, thetaz=90)          # degrees, about the origin
 tf.translate(graph, 100, 0, 0)       # micrometres
@@ -104,7 +104,7 @@ combined = nv.combine(graph_a, graph_b)   # merge, renumbering node ids
 
 SWC tags each point with a structure id. The standard ids are
 `1=soma`, `2=axon`, `3=basal dendrite`, `4=apical dendrite`; ids `>= 5`
-are custom (`neuronview` also names the GGN regions `5=LCA`, `6=MCA`,
+are custom (`morphoview` also names the GGN regions `5=LCA`, `6=MCA`,
 `7=LH`, `8=alphaL`).
 
 Palettes are keyed by short names combining a class count and a scheme,
@@ -117,12 +117,12 @@ palette's length wrap around so every morphology still renders.
 ## Project layout
 
 ```
-src/neuronview/
+src/morphoview/
     swc.py          SWC file I/O (numpy structured arrays)
     graph.py        networkx graph construction + morphology analysis
     colors.py       structure-id names and colour palettes
     transform.py    rigid transforms (translate/rotate/mirror)
-    cli.py          the `neuronview` command-line entry point
+    cli.py          the `morphoview` command-line entry point
     backends/
         mpl.py      matplotlib 2-D/3-D
         vtk.py      VTK tubes/lines, labels, PNG export
@@ -152,8 +152,10 @@ One-time setup on PyPI: at
 <https://pypi.org/manage/account/publishing/> add a *pending publisher* for
 this project with
 
+- PyPI project name: `morphoview`
 - Owner: `subhacom`
-- Repository: `neuronview`
+- Repository: `neuronview` (the GitHub repo name, which differs from the
+  PyPI/package name `morphoview`)
 - Workflow: `publish.yml`
 - Environment: `pypi`
 

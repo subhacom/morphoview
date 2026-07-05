@@ -1,19 +1,19 @@
-"""neuronview -- read, analyze and visualize neuronal morphologies.
+"""morphoview -- read, analyze and visualize neuronal morphologies.
 
 Quick start::
 
-    import neuronview as nv
+    import morphoview as nv
 
     graph = nv.swc_to_graph("cell.swc")
     print(nv.summary(graph))
 
     # Matplotlib (portable, always available if matplotlib is installed)
-    from neuronview.backends import mpl
+    from morphoview.backends import mpl
     mpl.plot_3d(graph, color=nv.get_colormap("3cd2"))
     mpl.show()
 
     # VTK (tapered tubes, interactive)
-    from neuronview.backends import vtk
+    from morphoview.backends import vtk
     vtk.show(graph, colormap=nv.get_colormap("3cd2"), axes=True)
 
 The rendering backends (matplotlib, VTK, vispy) are optional and imported

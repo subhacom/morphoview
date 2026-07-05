@@ -2,8 +2,8 @@ import matplotlib
 
 matplotlib.use("Agg")  # headless, no display required
 
-import neuronview as nv
-from neuronview.backends import mpl
+import morphoview as nv
+from morphoview.backends import mpl
 
 
 def test_plot_2d_draws_all_edges(sample_graph):

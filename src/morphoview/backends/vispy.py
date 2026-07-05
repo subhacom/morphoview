@@ -1,7 +1,7 @@
 """Vispy rendering backend.
 
 A GPU-accelerated interactive 3-D view using tube visuals.  Requires the
-``vispy`` package (``pip install neuronview[vispy]``).
+``vispy`` package (``pip install morphoview[vispy]``).
 """
 
 from __future__ import annotations
@@ -15,7 +15,7 @@ try:
 except ImportError as exc:  # pragma: no cover - exercised only without vispy
     raise ImportError(
         "The vispy backend requires the 'vispy' package. "
-        "Install it with: pip install neuronview[vispy]"
+        "Install it with: pip install morphoview[vispy]"
     ) from exc
 
 

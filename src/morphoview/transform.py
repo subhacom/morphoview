@@ -1,7 +1,7 @@
 """Rigid transformations (translation, rotation, mirroring) of morphologies.
 
 These operate on the :class:`networkx.DiGraph` representation from
-:mod:`neuronview.graph`, letting several cells be positioned relative to
+:mod:`morphoview.graph`, letting several cells be positioned relative to
 one another before rendering.
 """
 

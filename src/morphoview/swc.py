@@ -6,7 +6,7 @@ morphology.  Each non-comment line is one sample point::
     n  s  x  y  z  r  parent
 
 where ``n`` is an integer id, ``s`` the structure identifier (see
-:mod:`neuronview.colors`), ``x``/``y``/``z`` the position and ``r`` the
+:mod:`morphoview.colors`), ``x``/``y``/``z`` the position and ``r`` the
 radius (all in micrometres by convention), and ``parent`` the id of the
 parent point (``-1`` for the root).
 """
