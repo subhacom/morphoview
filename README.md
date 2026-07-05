@@ -1,5 +1,10 @@
 # morphoview
 
+[![PyPI version](https://img.shields.io/pypi/v/morphoview.svg)](https://pypi.org/project/morphoview/)
+[![Python versions](https://img.shields.io/pypi/pyversions/morphoview.svg)](https://pypi.org/project/morphoview/)
+[![Build and publish](https://github.com/subhacom/morphoview/actions/workflows/publish.yml/badge.svg)](https://github.com/subhacom/morphoview/actions/workflows/publish.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Read, analyze and visualize neuronal morphologies stored in
 [SWC](http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html)
 format.
