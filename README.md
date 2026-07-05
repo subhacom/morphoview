@@ -23,11 +23,20 @@ scripts (`neurograph.py`, `displaycell.py`, `morph3d*.py`, `cellmovie.py`).
 
 ## Installation
 
+Install from PyPI. The rendering backends are optional extras — the core
+I/O and analysis need only `numpy` and `networkx`:
+
 ```bash
-pip install -e .            # core only (numpy + networkx)
-pip install -e ".[mpl]"     # + matplotlib backend
-pip install -e ".[vtk]"     # + VTK backend
-pip install -e ".[all]"     # everything
+pip install morphoview            # core only (numpy + networkx)
+pip install "morphoview[mpl]"     # + matplotlib backend
+pip install "morphoview[vtk]"     # + VTK backend
+pip install "morphoview[all]"     # everything
+```
+
+To work on the source, install in editable mode from a checkout:
+
+```bash
+pip install -e ".[dev]"           # editable install + test/backend deps
 ```
 
 ## Command line
